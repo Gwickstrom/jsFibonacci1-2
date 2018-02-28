@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>js Fibonacci</title>
+    </head>
+    <body>
+        <script>
+            // Assignment: Fib + Nacci
+            // The Fibonacci sequence is a sequence where each number is the sum of its two predecessors. The sequence starts off like so: (0), 1, 1, 2, 3, 5, 8, etc. The 0 is in parenthesis because it helps the sequence get started but it is not actually part of the sequence.
+            //
+            // Using Closures make the Fib function with the following specifications:
+            // function fib() {
+            //   // Some variables here
+            //
+            //   function nacci(){
+            //     // do something to those variables here
+            //   }
+            //   return nacci
+            // }
+            //
+            function fib() {
+                let f0 = 0;
+                let f1 = 1;
+
+                function nacci() {
+                    let oldf0 = f0;
+                    let oldf1 = f1;
+
+                    f0 = oldf1;
+                    f1 = oldf0 + oldf1;
+                    console.log(f0);
+                }
+                return nacci;
+            }
+            var fibCounter = fib();
+            fibCounter() // should console.log "1"
+            fibCounter() // should console.log "1"
+            fibCounter() // should console.log "2"
+            fibCounter() // should console.log "3"
+            fibCounter() // should console.log "5"
+            fibCounter() // should console.log "8"
+            fibCounter()
+            fibCounter()
+        </script>
+    </body>
+</html>
